@@ -10,6 +10,6 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/asgi/
 import os
 import django
 from channels.routing import get_default_application
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hello.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ramtejajakka.settings')
 django.setup()
 application = get_default_application()
