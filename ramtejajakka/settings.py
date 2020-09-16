@@ -6,7 +6,7 @@ SECRET_KEY = '(atgigsa!ckj(!crbdwq#ixw$4w-_*%lz)-h*@gn$r=x286!c='
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["35.223.125.110","127.0.0.1"]
 
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
@@ -56,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-#WSGI_APPLICATION = 'ramtejajakka.wsgi.application'
+WSGI_APPLICATION = 'ramtejajakka.wsgi.application'
 ASGI_APPLICATION = 'ramtejajakka.routing.application'
 
 CHANNEL_LAYERS = {
