@@ -1,0 +1,25 @@
+{% extends 'trading_bot/navbar/navbar.html' %}
+
+{% block content %}
+    {% load static %}
+            <div class="jumbotron">
+                <p> Fill in you details to download resume</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <input name="name" value="{{current_name}}">
+                    <input name="name" value="{{current_name}}">
+                    <input name="name" value="{{current_name}}">
+
+
+<!--                    {{ form.as_p }}-->
+                    <button type="submit" value="save">submit</button>
+                </form>
+            </div>
+
+{% endblock %}
+
+
+
+<!--                    <input name="{{form.name}}">type name</input>-->
+<!--                    <input name="{{form.email}}">type name</input>-->
+<!--                    <input name="{{form.email}}">type name</input>-->

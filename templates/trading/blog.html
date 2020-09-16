@@ -1,0 +1,70 @@
+{% extends 'trading/nav_bar.html'%}
+
+{% block content %}
+{% load static %}
+
+<!--            <div id="content" class="site-content">-->
+<!--                <article>-->
+<!--                    <div class="content-1330 center-relative">-->
+<!--                        <div class="page-desc">-->
+<!--                        </div>-->
+
+
+<!--                            <h2 class="center-align red lighten-3" >posts</h2>-->
+<!--                            <ul class="collection">-->
+<!--                            <li class="collection-item" style="background-color:#333;-->
+<!--                                color: #fff;-->
+<!--                                border-right: 5px red solid;-->
+<!--                                border-left: 5px red solid;-->
+<!--                                border-top: 5px red solid;-->
+<!--                                border-bottom: 5px red solid;-->
+<!--                                /*same as above*/-->
+<!--                                border: 5px red solid;-->
+
+<!--                                border-width:10px;-->
+<!--                                border-bottom-width: 3px;-->
+<!--                                border-top-style: dotted;-->
+
+
+
+<!--                                padding-top: 20px;-->
+<!--                                padding-right: 20px;-->
+<!--                                padding-left: 20px;-->
+<!--                                padding-bottom: 20px;-->
+<!--                                /*same as above*/-->
+<!--                                padding: 20px;-->
+
+<!--                                margin-top: 20px;-->
+<!--                                margin: 20px 0px;-->
+<!--                            "><a href="blog_post/{{con.id}}">{{con}}</a></li>-->
+
+<!--                            </ul>-->
+
+<!--                        </div>-->
+<!--                    <div class="clear"></div>-->
+<!--                    <div class="clear"></div>-->
+
+<!--                </article>-->
+<!--            </div>-->
+                    {% for con in content %}
+                        <div class="blog-holder block center-relative content-1330">
+                            <div class="post-border center-relative block"></div>
+                            <article class="relative blog-item-holder center-relative">
+                                <div class="cat-links">
+                                    <ul>
+                                        <li>
+                                            <a href="blog_post/{{con.id}}">{{con.catogory}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="entry-date published">{{con.created_at}}</div>
+                                <div class="author vcard">Brian </div>
+                                <h2 class="entry-title">
+                                    <a href="blog_post/{{con.id}}">{{con.title}}</a>
+                                </h2>
+                                <div class="clear"></div>
+                            </article>
+                        </div>
+                    {% endfor %}
+
+{% endblock %}

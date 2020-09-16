@@ -1,0 +1,46 @@
+{% extends 'trading/nav_bar.html'%}
+
+{% block content %}
+{% load static %}
+<div id="content" class="site-content">
+                <article>
+                    <div class="content-1330 center-relative">
+                        <div class="page-desc">
+                            These scanners can help u Trade different type of strategies like.
+                            #Gap_up,
+                            #Gap_down,
+                            #Red_Green_Red,
+                            That can be used to place realtime orders on your D-mat account.
+                            click on the below pic to take u to the scanners.
+                            Learn how to use scanners by check out the blog post.
+                        </div>
+                        <div class="clear"></div>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <div class="button-group filters-button-group">
+                            <div class="button is-checked" data-filter="*">All</div>
+                        </div>
+
+                        <div class="grid" id="portfolio">
+
+                            <div class="grid-sizer"></div>
+                            {% for data in data %}
+                            <div class="grid-item element-item p_one_third post">
+                                <a href="{{data.trading_base_sub_cap}}">
+                                    <img src="{{data.trading_base_image.url}}" alt="">
+                                    <div class="portfolio-text-holder">
+                                        <h5>{{data.trading_base_caption}}</h5>
+                                        <div></div>
+                                        <p>{{data.trading_base_discription}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+                </article>
+            </div>
+{% endblock %}

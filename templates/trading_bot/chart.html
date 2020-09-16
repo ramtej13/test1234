@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <meta charset="UTF-8">
+    <title>socket2</title>
+</head>
+<body>
+<div id="this_class"><input type="text" id="mytext"></div>
+
+</body>
+<script src="{% static 'chart_room/reconnecting-websocket.js' %}"></script>
+<div style="max-width: 900px; max-height: 400px;">
+    <canvas id="myChart" width="900" height="400"></canvas>
+</div>
+
+<script>
+    var hello = [0];
+    let socket = new ReconnectingWebSocket('ws://localhost:8000/ws/trading_bot/stock_data/');
+    socket.onopen =function(e){
+        alert('Connection established');
+    };
+
+    socket.onmessage = function(e){
+        var recData=JSON.parse(e.data);
+        var newHello = recData['value']['value'][1]['last_price']
+
+<!--        console.log(newHello);-->
+
+<!--input        -->
+
+        var test = newHello;
+        document.getElementById("mytext").value = test;
+
+
+        dataObjNew=dataObj['data']['datasets'][0]['data'];
+        dataObjNew.shift();
+        dataObjNew.push(recData['value']['value'][1]['last_price']);
+        dataObj['data']['datasets'][0]['data']=dataObjNew;
+        window.myLine.update();
+
+
+
+    };
+
+    socket.onclose = function(e){
+        alert('Connection CLosed');
+    };
+
+
+
+    </script>
+
+<script>
+    var dataObj={
+        type: 'line',
+        data: {
+            labels: [1,2,3,4,5,6,7,8,9,10,11],
+            datasets: [{
+                label: 'Real time data',
+                data: [12, 19, 3, 5, 2, 3,1,2,3,5,6],
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    }
+    var ctx = document.getElementById('myChart').getContext('2d');
+    window.myLine = new Chart(ctx,dataObj );
+    </script>
+</html>

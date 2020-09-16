@@ -1,0 +1,12 @@
+{% extends 'trading_bot/navbar/navbar.html' %}
+
+{% block content %}
+    {% load static %}
+        <div class="container">
+            <div class="jumbotron">
+                <h1>{{profile_data.email}}</h1>
+                <h1>{{profile_data.user_name}}</h1>
+
+            </div>
+        </div>
+{% endblock %}

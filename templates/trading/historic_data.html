@@ -1,0 +1,76 @@
+{% extends 'trading/nav_bar.html'%}
+
+{% block content %}
+{% load static %}
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+<!--div {-->
+<!--  border-radius: 5px;-->
+<!--  background-color: #f2f2f2;-->
+<!--  padding: 20px;-->
+<!--}-->
+</style>
+
+<!--<form method="post">-->
+<!--<div class="form-group">-->
+<!--    {% csrf_token %}-->
+<!--    <label for="username">Date</label>-->
+<!--    <input type="text" id="username" name="hist_login_user_name" />-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--    {% csrf_token %}-->
+<!--    <button type="submit">Log In</button>-->
+<!--</div>-->
+<!--<div class="form-header">-->
+<!--    {% for message in messages %}-->
+<!--    <h1>{{message}}</h1>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+<!--</form>-->
+
+
+<div class="body-wrapper">
+  <div class="one_half">
+    You probably haven’t heard of them before they sold out scenester literally readymade. Trust fund Thundercats flexitarian, aesthetic Tumblr banjo freegan semiotics biodiesel master cleanse taxidermy blog.
+  </div>
+  <div class="one_half last">
+  <form  method="post">
+    {% csrf_token %}
+    <h1><label for="username">DATE </label></h1>
+
+    <input type="text" id="username" name="hist_login_user_name" placeholder="type it in this formate :--  year-month-day(2020-02-12)">
+
+    <input type="submit" value="Submit">
+    <div class="form-header">
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+    </div>
+  </form>
+  </div>
+</div>
+{% endblock %}
