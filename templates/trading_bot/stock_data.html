@@ -31,7 +31,7 @@
 
 <script>
     var hello = [0];
-    let socket = new ReconnectingWebSocket('ws://localhost:8000/ws/trading_bot/stock_data/');
+    let socket = new ReconnectingWebSocket('ws://'+window.location.host+'/ws/trading_bot/stock_data/');
     socket.onopen =function(e){
         alert('Connection established');
     };

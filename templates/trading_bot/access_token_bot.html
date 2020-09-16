@@ -116,7 +116,7 @@
     var roomName = JSON.parse(document.getElementById('room-name').textContent);
 <!--    var username = {{ username }};-->
 
-    var chatSocket = new ReconnectingWebSocket(ws://localhost:8000/ws/trading_bot/access_token_bot/);
+    var chatSocket = new ReconnectingWebSocket(ws://'+window.location.host+'/ws/trading_bot/access_token_bot/);
 
     chatSocket.onopen = function(e) {
       fetchMessages();
